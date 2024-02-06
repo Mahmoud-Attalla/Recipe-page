@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'Outfit';
+    src: url('../assets/fonts/outfit/Outfit-VariableFont_wght.ttf'),
+}
+@font-face {
+    font-family: 'YoungSerif';
+    src: url('../assets/fonts/young-serif/YoungSerif-Regular.ttf') ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Rose-White: hsl(330, 100%, 98%);
+    --Eggshell: hsl(30, 54%, 90%);
+    --Light-Grey: hsl(30, 18%, 87%);
+    --Wenge-Brown: hsl(30, 10%, 34%);
+    --Dark-Charcoal: hsl(24, 5%, 18%);
+    --Nutmeg: hsl(14, 45%, 36%);
+    --Dark-Raspberry: hsl(332, 51%, 32%);
+    --YoungSerif-Font:YoungSerif;
+    --Outfit-Font:Outfit;
+}
+body{
+    background-color: var(--Eggshell);
+    display: flex;
+    justify-content: center;
+    font-family: var(--Outfit-Font);
+}
+section{
+    max-width: 700px;
+    background-color: var(--White);
+}
+.content{
+    padding:5px 30px 20px;
+}
+figure{
+    padding-bottom: 5px;
+}
+figure img{
+    display: block;
+    width: 100%;
+}
+.title{
+    margin: 10px 0;
+}
+h1{
+    font-size: 35px;
+    font-family: var(--YoungSerif-Font);
+    font-weight: 400;
+    padding: 10px 0;
+}
+.title p{
+    font-family: var(--Outfit-Font);
+    color: var(--Wenge-Brown);
+}
+.Ingredients,.Instructions{
+    border-bottom: 1px solid var(--Light-Grey);
+    padding-bottom: 20px;
+}
+ul,ol{
+    list-style-type: none;
+}
+.Preparation{
+    padding: 30px;
+    background-color:#fff7fc;
+    border-radius: 15px;
+}
+h3{
+    font-weight: 600;
+    color: var(--Dark-Raspberry);
+    margin-bottom: 10px;
+}
+.Preparation ul{
+    counter-reset: list-counter;
+}
+.Preparation ul li b{
+    margin-right: 3px;
+} 
+ul li{
+    color:var(--Wenge-Brown);
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 27px;
+    margin-left: 5px;
+}
+
+h2{
+    font-family: var(--YoungSerif-Font);
+    color: var(--Nutmeg);
+    padding: 20px 0;
+    font-size: 27px;
+}
+.Preparation ul li::before,.Ingredients ul li::before{
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: var(--Dark-Raspberry);
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+ol li{
+    counter-increment: list-counter;
+    position: relative;
+    margin-left: 27px;
+    margin-bottom: 15px;
+}
+ol li::before{
+    content:counter(list-counter)".";
+    color: brown;
+    position: absolute;
+    left: -22px;
+    font-weight: 600;
+}
+.Nutrition{
+    color: var(--Wenge-Brown);
+}
+table{
+    margin-top: 20px;
+    width: 100%;
+}
+tr:not(:last-child){
+    border-bottom: 1px solid var(--Light-Grey);
+}
+tr{
+    padding: 20px;
+    display:flex;
+    justify-content: flex-start;
+}
+tr td:first-child{
+    flex: 1;
+}
+tr td:last-child{
+    color: var(--Nutmeg);
+    font-weight: 900;
+    flex: 1;
+}
+@media (min-width:720px){
+    .main-container{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    section{
+        border-radius: 15px;
+    }
+    figure{
+        padding:30px 30px 5px;
+    }
+    figure img{
+        border-radius: 15px;
+    }
+}
